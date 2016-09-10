@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Main Activity -->
+    <string name="app_name">Rui Engine</string>
+
+    <string name="ads_page1_welcome">Empower Your Maintenance Work </string>
+    <string name="ads_page1_hello">Inspire yourself and get mobility </string>
+
+    <string name="ads_page2_highlight">Smart But Light-weighted </string>
+    <string name="ads_page2_todo">You get your machine\'s status automatically </string>
+
+    <string name="ads_page3_cloud">Anywhere Access </string>
+    <string name="ads_page3_new">You are connecting the private cloud service </string>
+
+    <string name="ads_page4_enjoy">Enjoy New Experience in Work </string>
+    <string name="ads_page4_start">GET STARTED</string>
+
+    <!-- Signin Activity -->
+    <string name="no_google_accounts">No Google accounts registered for your device!</string>
+    <string name="only_google_account">Your only Google account selected!</string>
+
+    <string name="no_net_element_info">There is no net element in the range. Please click the side button to start scanning.</string>
+
+    <!-- Show Selected Net Element Activity -->
+    <string name="ne_ip_title">IP Address......</string>
+    <string name="ne_sw_version_info_title">SW Version......</string>
+    <string name="ne_hw_version_info_title">HW Version......</string>
+    <string name="ne_hw_part_num_title">HW Part Num......</string>
+    <string name="ne_hw_serial_num_title">HW SN......</string>
+
+    <!-- Display Box Stats Activity -->
+    <string name="max_cpu_loading_title">Max:</string>
+    <string name="max_cpu_loading">1209 MHz</string>
+    <string name="min_cpu_loading_title">Min:</string>
+    <string name="min_cpu_loading">200 MHz</string>
+    <string name="current_cpu_loading_title">Current:</string>
+
+
+
+</resources>

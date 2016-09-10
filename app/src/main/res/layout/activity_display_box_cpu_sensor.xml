@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/display_box_stats_head_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/display_box_stats_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/cpu_stats_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/display_box_stats_head_appbar"
+        android:orientation="horizontal">
+
+        <com.github.lzyzsd.circleprogress.ArcProgress
+            android:id="@+id/current_cpu_loading_arc"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="176dp"
+            android:layout_height="176dp"
+            custom:arc_bottom_text="CPU"
+            custom:arc_stroke_width="20dp"
+            custom:arc_bottom_text_size="30sp"
+            custom:arc_text_size="72sp"
+            custom:arc_text_color="#FFFFFF"
+            custom:arc_suffix_text_size="32sp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ProgressBar
+                android:id="@+id/max_cpu_loading_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_height="10dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true"
+                android:minHeight="20dp"
+                android:max="100"
+                android:progress="100"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/max_cpu_loading_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/max_cpu_loading_title"/>
+
+                <TextView
+                    android:id="@+id/max_cpu_loading_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/max_cpu_loading"/>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/min_cpu_loading_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_height="10dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true"
+                android:minHeight="20dp"
+                android:max="100"
+                android:progress="20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/min_cpu_loading_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/min_cpu_loading_title"/>
+
+                <TextView
+                    android:id="@+id/min_cpu_loading_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/min_cpu_loading"/>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/current_cpu_loading_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginLeft="4dp"
+                android:background="@android:color/transparent"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="50" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/current_cpu_loading_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/current_cpu_loading_title"/>
+
+                <TextView
+                    android:id="@+id/current_cpu_loading_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/display_box_stats_body_appbar"
+        android:layout_below="@id/cpu_stats_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/display_box_stats_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/display_box_stats_viewpager"
+        android:layout_width="match_parent"
+        android:layout_below="@id/display_box_stats_body_appbar"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
